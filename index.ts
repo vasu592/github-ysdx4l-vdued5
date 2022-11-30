@@ -33,16 +33,16 @@ function initMap(): void {
     //new google.maps.LatLng(50.88270, 7.09371),
     // new google.maps.LatLng(50.85180,7.17817)
   );
-  new google.maps.Marker({
-    position: { lat: 18.531028447529295, lng: 73.87064 },
-    map,
-    title: 'South West',
-  });
-  new google.maps.Marker({
-    position: { lat: 18.531781, lng: 73.8710073 },
-    map,
-    title: 'North East',
-  });
+  // new google.maps.Marker({
+  //   position: { lat: 18.531028447529295, lng: 73.87064 },
+  //   map,
+  //   title: 'South West',
+  // });
+  // new google.maps.Marker({
+  //   position: { lat: 18.531781, lng: 73.8710073 },
+  //   map,
+  //   title: 'North East',
+  // });
   // new google.maps.Marker({
   //   position: { lat: 18.531701985747137, lng: 73.87053206061877 },
   //   map,
@@ -54,7 +54,7 @@ function initMap(): void {
   //   title: 'South East',
   // });
   // The photograph is courtesy of the U.S. Geological Survey.
-  let image = '../images/pune.png';
+  let image = '../images/Picture1.png';
 
   /**
    * The custom USGSOverlay object contains the USGS image,
@@ -196,14 +196,15 @@ function initMap(): void {
     console.log('x and y values', event.pixel.x, event.pixel.y);
 
     var data = [
-      { x: 18, y: 22 },
-      { x: 73, y: 15 },
+      { x: 1.6511627906976685, y: 24.80294659300182 },
+      { x: 76, y: 15 },
+      { x: 95, y: 137 }
     ];
     for (var i = 0; i < data.length; i++) {
       var pixelLatLng = overlay
         .getProjection()
         .fromContainerPixelToLatLng(
-          new google.maps.Point(data[i].x + 417, data[i].y + 110)
+          new google.maps.Point(data[i].x + 434, data[i].y + 110)
         );
 
       if (pixelLatLng) {
