@@ -54,7 +54,7 @@ function initMap(): void {
   //   title: 'South East',
   // });
   // The photograph is courtesy of the U.S. Geological Survey.
-  let image = '../images/Picture1.png';
+  let image = '../images/pune.png';
 
   /**
    * The custom USGSOverlay object contains the USGS image,
@@ -196,18 +196,14 @@ function initMap(): void {
     console.log('x and y values', event.pixel.x, event.pixel.y);
 
     var data = [
-      { x: 439, y: 472 },
-      { x: 466.4995532295124, y: 467.1755169772785 },
-      { x: 492.4697674418605, y: 437.5953488372093 },
-      { x: 415.46644331568143, y: 311.47119853020644 },
-      { x: 289.7771671246565, y: 214.93180114913815 },
-      { x: 205.09169455904103, y: 68.77629018447888 },
+      { x: 18, y: 22 },
+      { x: 73, y: 15 },
     ];
     for (var i = 0; i < data.length; i++) {
       var pixelLatLng = overlay
         .getProjection()
         .fromContainerPixelToLatLng(
-          new google.maps.Point(data[i].x + 230, data[i].y + 65)
+          new google.maps.Point(data[i].x + 417, data[i].y + 110)
         );
 
       if (pixelLatLng) {
@@ -221,9 +217,9 @@ function initMap(): void {
             ', lng:' +
             data[i].y +
             ' x:' +
-            (data[i].x + 230) +
+            (data[i].x + 417) +
             ', lng:' +
-            (data[i].y + 65),
+            (data[i].y + 110),
         });
       }
     }
