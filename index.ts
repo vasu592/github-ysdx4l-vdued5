@@ -12,7 +12,7 @@ function initMap(): void {
   const map = new google.maps.Map(
     document.getElementById('map') as HTMLElement,
     {
-      zoom: 21,
+      zoom: 19,
       center: { lat: 18.5314, lng: 73.870999 },
       mapTypeId: 'satellite',
     }
@@ -25,24 +25,25 @@ function initMap(): void {
   const bounds = new google.maps.LatLngBounds(
     //new google.maps.LatLng(62.281819, -150.287132),
     //new google.maps.LatLng(62.400471, -150.005608)
-    new google.maps.LatLng(18.531028447529295, 73.87064),
-    new google.maps.LatLng(18.531781, 73.8710073)
+    new google.maps.LatLng(18.53088, 73.870532),
+    new google.maps.LatLng(18.53179, 73.871155)
 
     // new google.maps.LatLng(18.531701985747137, 73.87053206061877),
     // new google.maps.LatLng(18.53109456918211, 73.87113337868803)
     //new google.maps.LatLng(50.88270, 7.09371),
     // new google.maps.LatLng(50.85180,7.17817)
   );
-  // new google.maps.Marker({
-  //   position: { lat: 18.531028447529295, lng: 73.87064 },
-  //   map,
-  //   title: 'South West',
-  // });
-  // new google.maps.Marker({
-  //   position: { lat: 18.531781, lng: 73.8710073 },
-  //   map,
-  //   title: 'North East',
-  // });
+
+  new google.maps.Marker({
+    position: { lat: 18.53088, lng: 73.870522 },
+    map,
+    title: 'South West',
+  });
+  new google.maps.Marker({
+    position: { lat: 18.53179, lng: 73.871165 },
+    map,
+    title: 'North East',
+  });
   // new google.maps.Marker({
   //   position: { lat: 18.531701985747137, lng: 73.87053206061877 },
   //   map,
@@ -54,7 +55,7 @@ function initMap(): void {
   //   title: 'South East',
   // });
   // The photograph is courtesy of the U.S. Geological Survey.
-  let image = '../images/Picture1.png';
+  let image = '../images/Pune-1.png';
 
   /**
    * The custom USGSOverlay object contains the USGS image,
@@ -115,9 +116,9 @@ function initMap(): void {
 
       // Resize the image's div to fit the indicated dimensions.
       if (this.div) {
-        this.div.style.left = sw.x - 70 + 'px';
+        this.div.style.left = sw.x + 'px';
         this.div.style.top = ne.y + 'px';
-        this.div.style.width = ne.x - sw.x + 160 + 'px';
+        this.div.style.width = ne.x - sw.x + 'px';
         this.div.style.height = sw.y - ne.y + 'px';
       }
     }
@@ -198,13 +199,13 @@ function initMap(): void {
     var data = [
       { x: 1.6511627906976685, y: 24.80294659300182 },
       { x: 76, y: 15 },
-      { x: 95, y: 137 }
+      { x: 95, y: 137 },
     ];
     for (var i = 0; i < data.length; i++) {
       var pixelLatLng = overlay
         .getProjection()
         .fromContainerPixelToLatLng(
-          new google.maps.Point(data[i].x + 434, data[i].y + 110)
+          new google.maps.Point(data[i].x + 416, data[i].y + 120)
         );
 
       if (pixelLatLng) {
