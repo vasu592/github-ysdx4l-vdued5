@@ -25,8 +25,8 @@ function initMap(): void {
   const bounds = new google.maps.LatLngBounds(
     //new google.maps.LatLng(62.281819, -150.287132),
     //new google.maps.LatLng(62.400471, -150.005608)
-    new google.maps.LatLng(18.53088, 73.870532),
-    new google.maps.LatLng(18.53179, 73.871155)
+    new google.maps.LatLng(18.53093, 73.870490),
+    new google.maps.LatLng(18.53167, 73.871199)
 
     // new google.maps.LatLng(18.531701985747137, 73.87053206061877),
     // new google.maps.LatLng(18.53109456918211, 73.87113337868803)
@@ -35,12 +35,12 @@ function initMap(): void {
   );
 
   new google.maps.Marker({
-    position: { lat: 18.53088, lng: 73.870522 },
+    position: { lat: 18.53082, lng: 73.870490 },
     map,
     title: 'South West',
   });
   new google.maps.Marker({
-    position: { lat: 18.53179, lng: 73.871165 },
+    position: { lat: 18.53167, lng: 73.871199 },
     map,
     title: 'North East',
   });
@@ -196,34 +196,46 @@ function initMap(): void {
   google.maps.event.addListener(map, 'click', function (event) {
     console.log('x and y values', event.pixel.x, event.pixel.y);
 
-    var data = [
-      { x: 1.6511627906976685, y: 24.80294659300182 },
-      { x: 76, y: 15 },
-      { x: 95, y: 137 },
-    ];
-    for (var i = 0; i < data.length; i++) {
-      var pixelLatLng = overlay
-        .getProjection()
-        .fromContainerPixelToLatLng(
-          new google.maps.Point(data[i].x + 416, data[i].y + 120)
-        );
 
-      if (pixelLatLng) {
+
+
+
+    var data = [
+    
+      // { lat: 18.531288682179742, lng: 73.87084653318132 },
+      
+      
+      { lat: 18.53129613595078, lng: 73.87088854244544 },
+      
+      
+      { lat: 18.531314515575705, lng: 73.87099212954438 },
+      
+      
+      { lat: 18.531370905269164, lng: 73.87106873727714 },
+      
+      
+      { lat: 18.531534696996527, lng: 73.87100616753648 },
+      
+      
+      { lat: 18.531507328857842, lng: 73.87084694552348 },
+      
+      
+      { lat: 18.531489425097902, lng: 73.87066873236286 },
+      
+      
+      { lat: 18.53160361800068, lng: 73.87087133432071 }
+      
+          ]
+    for (var i = 0; i < data.length; i++) {
+      
+     
         new google.maps.Marker({
           icon: 'http://maps.google.com/mapfiles/ms/icons/green-dot.png',
-          position: { lat: pixelLatLng.lat(), lng: pixelLatLng.lng() },
+          position: { lat: data[i].lat, lng: data[i].lng },
           map,
-          title:
-            'x:' +
-            data[i].x +
-            ', lng:' +
-            data[i].y +
-            ' x:' +
-            (data[i].x + 417) +
-            ', lng:' +
-            (data[i].y + 110),
+         
         });
-      }
+      
     }
     var pixelLatLng1 = overlay
       .getProjection()
